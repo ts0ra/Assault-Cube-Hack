@@ -15,13 +15,13 @@ namespace offset
 	constexpr auto bIsDead = 0x318;
 
 	constexpr auto currentWeaponObject = 0x364; // uintptr_t, current weapon object (localPlayerEntity + currentWeaponObject)
+	constexpr auto granadeObject = 0x358; // uintptr_t, granade object (localPlayerEntity + granadeObject)
 	constexpr auto iWeaponId = 0x4; // int, weapon id
-	constexpr auto cWeaponName = 0x17; // char[16]
 	constexpr auto ammoReserve = 0x10; // uintptr_t, ammo reserve
 	constexpr auto ammoLoaded = 0x14; // uintptr_t, ammo loaded
 
 	constexpr auto gunInfo = 0xC; // uintptr_t, gun info (currentWeaponObject + gunInfo)
-	constexpr auto cGunName = 0x0; // char[?]
+	constexpr auto cWeaponName = 0x17; // char[16]
 	constexpr auto sWeaponShootFX = 0x42;
 	constexpr auto sWeaponReloadFX = 0x44;
 	constexpr auto sReloadTime = 0x46;
@@ -39,9 +39,10 @@ namespace offset
 	// current weapon
 }
 
-enum weaponName
+enum weaponId
 {
 	knife = 0,
 	pistol = 1,
 	ar = 2,
+	granade = 7
 };

@@ -148,12 +148,7 @@ public:
             }
         }
 
-        T value = { };
-        if (!::ReadProcessMemory(processHandle, reinterpret_cast<const void*>(currentAddress), &value, sizeof(T), NULL))
-        {
-            std::cout << "[-] Failed to read process memory, error code: " << GetLastError() << std::endl;
-        }
-        return value;
+        return currentAddress;
     }
 
     // Write process memory
